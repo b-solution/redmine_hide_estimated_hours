@@ -16,24 +16,18 @@ This plugin is just a limited workaround, i really would love to see this featur
 too, please +1 [this](http://www.redmine.org/issues/12005) and [this](http://www.redmine.org/issues/11963)
 Redmine Ticket.
 
-
 ## Installation
 
 The installation follows the default path for [Redmine plugins](http://www.redmine.org/projects/redmine/wiki/Plugins).
-
 
 ## Usage
 
 Uncheck the "View spent time" permission for any role that should not be able to see estimated hours.
 
-
 ## Requirements
 
 Redmine >= 3.4
-(see branches for older compatible versions)
-
 
 ## License
 
-
-[http://return1.mit-license.org/](http://return1.mit-license.org/)
+See `LICENSE`.
