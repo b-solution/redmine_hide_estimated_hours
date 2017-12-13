@@ -16,6 +16,9 @@ This plugin is just a limited workaround, i really would love to see this featur
 too, please +1 [this](http://www.redmine.org/issues/12005) and [this](http://www.redmine.org/issues/11963)
 Redmine Ticket.
 
+Please note that this project is a fork of [return1/redmine_hide_estimated_hours](https://github.com/return1/redmine_hide_estimated_hours).
+Support for Redmine versions below 3.4 can be found there. 
+
 ## Installation
 
 The installation follows the default path for [Redmine plugins](http://www.redmine.org/projects/redmine/wiki/Plugins).
