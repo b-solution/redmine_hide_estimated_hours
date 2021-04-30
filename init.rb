@@ -12,7 +12,7 @@ Redmine::Plugin.register :redmine_hide_estimated_hours do
   url 'https://github.com/lvmbdv/redmine_hide_estimated_hours'
   author_url 'https://lvmbdv.github.io/'
 
-  project_module :resources do
+  project_module :issue_tracking do
     permission :view_estimate_times, {}
   end
 
