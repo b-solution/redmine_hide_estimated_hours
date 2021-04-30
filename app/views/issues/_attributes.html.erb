@@ -19,7 +19,7 @@
 <% end %>
 
 <% if @issue.safe_attribute?('category_id') && @issue.project.issue_categories.any? %>
-<p><%= f.select :category_id, (@issue.project.issue_categories.collect {|c| [c.name, c.id]}), :include_blank => true, :required => @issue.required_attribute?('category_id') %>
+<p><%= f.select :category_id, (@issue.project.issue_categories.collect {|c| [c.name, c.id]}), {:include_blank => true, :required => @issue.required_attribute?('category_id')}, :onchange => ("updateIssueFrom('#{escape_javascript update_issue_form_path(@project, @issue)}', this)" if @issue.new_record?) %>
 <%= link_to(l(:label_issue_category_new),
             new_project_issue_category_path(@issue.project),
             :remote => true,
@@ -53,19 +53,19 @@
 <% if @issue.safe_attribute? 'start_date' %>
 <p id="start_date_area">
   <%= f.date_field(:start_date, :size => 10, :required => @issue.required_attribute?('start_date')) %>
-  <%= calendar_for('issue_start_date') if @issue.leaf? %>
+  <%= calendar_for('issue_start_date') %>
 </p>
 <% end %>
 
 <% if @issue.safe_attribute? 'due_date' %>
 <p id="due_date_area">
   <%= f.date_field(:due_date, :size => 10, :required => @issue.required_attribute?('due_date')) %>
-  <%= calendar_for('issue_due_date') if @issue.leaf? %>
+  <%= calendar_for('issue_due_date') %>
 </p>
 <% end %>
 
 <% if @issue.safe_attribute? 'estimated_hours' %>
-<% if User.current.allowed_to?(:view_time_entries, @project) %>
+<% if User.current.allowed_to?(:view_estimate_times, @project || @issue.project) %>
 <p><%= f.hours_field :estimated_hours, :size => 3, :required => @issue.required_attribute?('estimated_hours') %> <%= l(:field_hours) %></p>
 <% end %>
 <% end %>

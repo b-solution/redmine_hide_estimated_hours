@@ -32,7 +32,7 @@
         </tr>
         <% end %>
         <% if @query.available_totalable_columns.any? %>
-        <% if User.current.allowed_to?(:view_time_entries, @project) %>
+        <% if (@project ? User.current.allowed_to?(:view_time_entries, @project) : User.current.allowed_to?(:view_time_entries, @project,  global: true) ) %>
         <tr>
           <td><%= l(:label_total_plural) %></td>
           <td><%= available_totalable_columns_tags(@query) %></td>
